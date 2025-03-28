@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { TextField, MenuItem, Select, Checkbox, FormControlLabel } from "@mui/material";
 import { WhatsApp } from "@mui/icons-material";
-import AcUnitIcon from '@mui/icons-material/AcUnit';
+import { CircularProgress } from "@mui/material";
 
 function Pages2() {
 
     const [language, setLanguage] = useState("বাংলা");
-    const [site, setSite] = useState("betx365.world");
+    const [site, setSite] = useState("সাইট সিলেক্ট করুন");
     const [rate, setRate] = useState("23%");
     const [agree, setAgree] = useState(false);
+
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false); // এখানে রিডাইরেক্ট বা অন্য লজিক বসাতে পারো
+        }, 3000);
+    };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-black text-white">
@@ -65,7 +74,7 @@ function Pages2() {
                 </div>
                 <div className="flex items-center gap-2 mb-4">
                     <Select value={site} onChange={(e) => setSite(e.target.value)} fullWidth className="bg-gray-800 text-white">
-                        <MenuItem value="betx365.world">betx365.world</MenuItem>
+                        <MenuItem value="সাইট সিলেক্ট করুন">সাইট সিলেক্ট করুন</MenuItem>
                         <MenuItem value="betx300.world">betx300.world</MenuItem>
                         <MenuItem value="betx375.world">betx375.world</MenuItem>
                         <MenuItem value="betx385.world">betx385.world</MenuItem>
@@ -106,9 +115,13 @@ function Pages2() {
 
                 {/* Submit Button */}
                 <button
-                    disabled={!agree}
-                    className={`w-full py-2 rounded-md mt-4 ${agree ? 'bg-purple-700' : 'bg-gray-600 cursor-not-allowed'}`}>
-                    এগিয়ে যান
+                    onClick={handleSubmit}
+                    disabled={!agree || loading}
+                    className={`w-full py-2 rounded-md mt-4 flex justify-center items-center ${
+                        agree ? 'bg-purple-700' : 'bg-gray-600 cursor-not-allowed'
+                    }`}
+                >
+                    {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
                 </button>
 
             </div>
