@@ -46,7 +46,7 @@ function Pages2() {
 
                 {/* Language Selection */}
                 <label className="block text-sm font-medium text-gray-300 mb-2">সাইট  ক্যাটাগরি সিলেক্ট করুন</label>
-                <div className="flex gap-2 mb-4 whitespace-nowrap">
+                <div className="flex gap-2 mb-4">
                     {['বাংলা', 'ডলার', 'সেমক ডিপোজিট'].map((lang) => (
                         <button
                             key={lang}
