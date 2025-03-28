@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { TextField, MenuItem, Select, Checkbox, FormControlLabel } from "@mui/material";
+import { motion } from "framer-motion";
+import { TextField, MenuItem, Select, Checkbox, FormControlLabel, CircularProgress } from "@mui/material";
 import { WhatsApp } from "@mui/icons-material";
-import { CircularProgress } from "@mui/material";
 
 function Pages2() {
-
     const [language, setLanguage] = useState("বাংলা");
     const [site, setSite] = useState("সাইট সিলেক্ট করুন");
     const [rate, setRate] = useState("23%");
     const [agree, setAgree] = useState(false);
-
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = () => {
@@ -20,59 +18,69 @@ function Pages2() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-black text-white">
-            <div className="max-w-lg w-full bg-gray-900 p-2.5 rounded-lg shadow-lg ">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="min-h-screen flex items-center justify-center bg-black text-white"
+        >
+            <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="max-w-lg w-full bg-gray-900 p-4 rounded-lg shadow-lg"
+            >
                 {/* Banner */}
-                <div className="mb-4">
+                <motion.div initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
                     <img src="/banner2.jpg" alt="Banner" className="w-full rounded-lg" />
-                </div>
+                </motion.div>
 
                 {/* Full Name */}
-                <div className="mb-4">
+                <motion.div initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
                     <label className="block text-sm font-medium text-gray-300 mb-2">আপনার নাম লিখুন</label>
                     <TextField
                         variant="outlined"
                         fullWidth
                         placeholder="আপনার নাম লিখুন"
-                        InputProps={{
-                            className: "bg-gray-700  text-white border border-gray-600 rounded-lg",
-                        }}
+                        InputProps={{ className: "bg-gray-700 text-white border border-gray-600 rounded-lg" }}
                     />
-                </div>
+                </motion.div>
 
                 {/* Phone Number */}
-                <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-300 mb-2"> আপনার WhatsApp নাম্বার লিখুন</label>
+                <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">আপনার WhatsApp নাম্বার লিখুন</label>
                     <TextField
                         variant="outlined"
                         fullWidth
                         placeholder="আপনার WhatsApp নাম্বার লিখুন"
-                        InputProps={{
-                            className: "bg-gray-700  text-white border border-gray-600 rounded-lg",
-                        }}
+                        InputProps={{ className: "bg-gray-700 text-white border border-gray-600 rounded-lg" }}
                     />
-                </div>
+                </motion.div>
 
                 {/* Language Selection */}
-                <label className="block text-sm font-medium text-gray-300 mb-2">সাইট  ক্যাটাগরি সিলেক্ট করুন</label>
-                <div className="flex gap-2 mb-4">
-                    {['বাংলা', 'ডলার', 'সেমক ডিপোজিট'].map((lang) => (
-                        <button
+                <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">সাইট ক্যাটাগরি সিলেক্ট করুন</label>
+                <motion.div className="flex gap-2 mb-4">
+                    {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang, index) => (
+                        <motion.button
                             key={lang}
                             onClick={() => setLanguage(lang)}
-                            className={`flex-1 py-2 rounded-md ${language === lang ? 'bg-purple-700' : 'bg-gray-700'}`}
+                            whileTap={{ scale: 0.9 }}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 + index * 0.1 }}
+                            className={`flex-1 py-2 rounded-md ${language === lang ? "bg-purple-700" : "bg-gray-700"}`}
                         >
                             {lang}
-                        </button>
+                        </motion.button>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Site Selection */}
-                <div className="flex justify-between gap-2 ">
+                <div className="flex justify-between gap-2">
                     <label className="block text-sm font-medium text-gray-300 mb-2">কোন সাইট নিবেন সিলেক্ট করুন</label>
-                    <label className="block text-sm font-medium text-gray-300 me-6 mb-2">রেট</label>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">রেট</label>
                 </div>
-                <div className="flex items-center gap-2 mb-4">
+                <motion.div className="flex items-center gap-2 mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                     <Select value={site} onChange={(e) => setSite(e.target.value)} fullWidth className="bg-gray-800 text-white">
                         <MenuItem value="সাইট সিলেক্ট করুন">সাইট সিলেক্ট করুন</MenuItem>
                         <MenuItem value="betx300.world">betx300.world</MenuItem>
@@ -85,16 +93,20 @@ function Pages2() {
                         <MenuItem value="27টা">27টা</MenuItem>
                         <MenuItem value="30টা">30টা</MenuItem>
                     </Select>
-                </div>
+                </motion.div>
 
                 {/* Check Site Button */}
                 <button className="w-full py-2 bg-purple-700 rounded-md mb-4">সাইট চেক করুন</button>
 
                 {/* Info Text */}
                 <div className="flex gap-1.5">
-                    <p className="text-sm text-red-500 font-s mb-4">*এজেন্ট একাউন্ট কনফার্ম করতে অন্ততঃপক্ষে 1000 টাকা ডিপোজিট করতে হবে।</p>
+                    <p className="text-sm text-red-500 font-s mb-4">
+                        *এজেন্ট একাউন্ট কনফার্ম করতে অন্ততঃপক্ষে 1000 টাকা ডিপোজিট করতে হবে।
+                    </p>
                 </div>
-                <p className="text-sm text-gray-400 mb-4 text-justify">অগ্রিম পেমেন্ট করার মূল উদ্দেশ্য হলো, অনেকে একাউন্ট খুলে পরবর্তীতে কোন ব্যালেন্স নেই না। প্যানেল সম্পূর্ণ খালি থাকে, তাই যারা সঠিকভাবে এজেন্ট নেবে, তারা অবশ্যই অ্যাডভান্স পেমেন্ট করে নিতে হবে।</p>
+                <p className="text-sm text-gray-400 mb-4 text-justify">
+                    অগ্রিম পেমেন্ট করার মূল উদ্দেশ্য হলো, অনেকে একাউন্ট খুলে পরবর্তীতে কোন ব্যালেন্স নেই না। প্যানেল সম্পূর্ণ খালি থাকে, তাই যারা সঠিকভাবে এজেন্ট নেবে, তারা অবশ্যই অ্যাডভান্স পেমেন্ট করে নিতে হবে।
+                </p>
 
                 <div className="flex justify-between items-center">
                     {/* Agreement Checkbox */}
@@ -105,28 +117,29 @@ function Pages2() {
                     />
 
                     {/* WhatsApp Button */}
-                    <div className="fixed bottom-5 right-5">
+                    <motion.div
+                        className="fixed bottom-5 right-5"
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                    >
                         <button className="bg-green-500 px-3 py-2.5 rounded-full shadow-lg">
                             <WhatsApp className="text-white" />
                         </button>
-                    </div>
+                    </motion.div>
                 </div>
-
 
                 {/* Submit Button */}
                 <button
                     onClick={handleSubmit}
                     disabled={!agree || loading}
-                    className={`w-full py-2 rounded-md mt-4 flex justify-center items-center ${
-                        agree ? 'bg-purple-700' : 'bg-gray-600 cursor-not-allowed'
-                    }`}
+                    className={`w-full py-2 rounded-md mt-4 flex justify-center items-center ${agree ? "bg-purple-700" : "bg-gray-600 cursor-not-allowed"
+                        }`}
                 >
                     {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
                 </button>
-
-            </div>
-        </div>
-    )
+            </motion.div>
+        </motion.div>
+    );
 }
 
-export default Pages2
+export default Pages2;
