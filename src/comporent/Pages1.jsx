@@ -24,7 +24,7 @@ function Pages1() {
 
         {/* bannerSection */}
         <div className='bannerSection flex justify-center'>
-          <img src="../public/banner.jpg" alt="Banner" className="rounded-lg shadow-lg" />
+          <img src="./banner.jpg" alt="Banner" className="rounded-lg shadow-lg" />
         </div>
 
         {/* mainSection */}
