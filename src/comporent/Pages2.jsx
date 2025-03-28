@@ -11,8 +11,8 @@ function Pages2() {
     const [agree, setAgree] = useState(false);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-black p-4 text-white">
-            <div className="max-w-lg w-full bg-gray-900 p-6 rounded-lg shadow-lg">
+        <div className="min-h-screen flex items-center justify-center bg-black text-white">
+            <div className="max-w-lg w-full bg-gray-900 p-6 rounded-lg shadow-lg ">
                 {/* Banner */}
                 <div className="mb-4">
                     <img src="/banner2.jpg" alt="Banner" className="w-full rounded-lg" />
