@@ -92,10 +92,9 @@ function Pages2() {
                 {/* Language Selection */}
                 <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">সাইট ক্যাটাগরি সিলেক্ট করুন</label>
-                    <div className="flex gap-4 h-12 mb-4 whitespace-nowrap">
+                    <div className="flex gap-4 h-12 mb-4 whitespace-nowrap" >
                         {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang, index) => (
-                            <motion.button key={lang} onClick={() => setLanguage(lang)}
-                                whileHover={{ scale: [1, 1.2, 1], transition: { duration: 0.6, ease: "easeInOut" } }}
+                            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} key={lang} onClick={() => setLanguage(lang)}
                                 className={`flex-1 py-2 px-4 rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"}`}>{lang}</motion.button>
                         ))}
                     </div>
@@ -149,10 +148,13 @@ function Pages2() {
                 </div>
 
                 {/* Submit Button */}
-                <button onClick={handleSubmit} disabled={!agree || loading}
-                    className={`w-full py-3 rounded-md mt-4 flex justify-center items-center ${agree ? "bg-purple-700" : "bg-gray-600 cursor-not-allowed"}`}>
-                    {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
-                </button>
+                <motion.button className="w-full" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <button onClick={handleSubmit} disabled={!agree || loading}
+                        className={`w-full py-3 rounded-md mt-4 flex justify-center items-center ${agree ? "bg-purple-700" : "bg-gray-600 cursor-not-allowed"}`}>
+                        {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
+                    </button>
+                </motion.button>
+
             </motion.div>
         </motion.div>
     );
