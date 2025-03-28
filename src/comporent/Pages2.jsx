@@ -34,7 +34,7 @@ function Pages2() {
             <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-lg w-full bg-gray-900 p-4 rounded-lg shadow-lg">
-                
+
                 {/* Banner */}
                 <motion.img src="/banner2.jpg" alt="Banner" className="w-full rounded-lg" initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} />
 
@@ -55,7 +55,7 @@ function Pages2() {
                 {/* Language Selection */}
                 <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">সাইট ক্যাটাগরি সিলেক্ট করুন</label>
-                    <div className="flex gap-4 mb-4 whitespace-nowrap">
+                    <div className="flex gap-4 h-12 mb-4 whitespace-nowrap">
                         {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang, index) => (
                             <motion.button key={lang} onClick={() => setLanguage(lang)}
                                 whileHover={{ scale: [1, 1.2, 1], transition: { duration: 0.6, ease: "easeInOut" } }}
@@ -74,12 +74,17 @@ function Pages2() {
                         <Select value={site} onChange={handleSiteChange} fullWidth className="bg-gray-800 text-white h-12" displayEmpty>
                             {site === "" && <MenuItem value="" disabled>সাইট সিলেক্ট করুন</MenuItem>}
                             {siteOptions.map(({ name, rate }) => (
-                                <MenuItem key={name} value={name}>{name} {rate}</MenuItem>
+                                <MenuItem key={name} value={name}>
+                                    <div className="flex justify-between items-center w-full">
+                                        <span className="text-sm">{name}</span>
+                                        <span className="text-sm">{rate}</span>
+                                    </div>
+                                </MenuItem>
                             ))}
                         </Select>
-                        <Select value={rate} className="bg-gray-800 h-12 text-white min-w-20">
+                        <div value={rate} className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20">
                             <MenuItem value={rate}>{rate}</MenuItem>
-                        </Select>
+                        </div>
                     </div>
                 </div>
 
