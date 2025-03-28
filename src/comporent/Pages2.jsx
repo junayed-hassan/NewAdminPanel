@@ -108,7 +108,7 @@ function Pages2() {
                         <label className="block text-sm font-medium text-gray-300 me-14">রেট</label>
                     </div>
                     <div className="flex items-center gap-2 mb-4  whitespace-nowrap">
-                        <Select value={site} onChange={handleSiteChange} fullWidth className="bg-gray-800 text-white h-12"  displayEmpty>
+                        <Select value={site} onChange={handleSiteChange} fullWidth className="bg-gray-800 text-white h-12" displayEmpty>
                             {site === "" && <MenuItem value="" disabled>সাইট সিলেক্ট করুন</MenuItem>}
                             {siteOptions.map(({ name, rate }) => (
                                 <MenuItem key={name} value={name}>
@@ -135,7 +135,12 @@ function Pages2() {
 
                 {/* Agreement Checkbox & WhatsApp */}
                 <div className="flex justify-between items-center">
-                    <FormControlLabel control={<Checkbox checked={agree} onChange={() => setAgree(!agree)} />} label="আমি এই শর্তে রাজি আছি" className="text-sm text-blue-700" />
+                    <FormControlLabel control={<Checkbox sx={{
+                        color: "#9333ea", // আনচেকড অবস্থায় কালার Purple
+                        "&.Mui-checked": {
+                            color: "#9333ea" // চেকড অবস্থায়ও Purple
+                        }
+                    }} checked={agree} onChange={() => setAgree(!agree)} />} label="আমি এই শর্তে রাজি আছি" className="text-sm text-purple-700 font-bold" />
                     <motion.div className="fixed bottom-18 right-5" animate={{ scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                         <button className="bg-green-500 px-3 py-2.5 rounded-full shadow-lg">
                             <WhatsApp className="text-white" />
