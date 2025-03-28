@@ -1,12 +1,12 @@
-import Pages1 from "./pages1"
-import Pages2 from "./Pages2"
+import Pages1 from "./comporent/Pages1";
+import Pages2 from "./comporent/Pages2";
 
 function App() {
   return (
-    <>
+    <div>
       <Pages1 />
-      <Pages2 />
-    </>
+      <Pages2 />      
+    </div>
   )
 }
 
