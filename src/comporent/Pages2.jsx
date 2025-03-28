@@ -39,17 +39,17 @@ function Pages2() {
                 <motion.img src="/banner2.jpg" alt="Banner" className="w-full rounded-lg" initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} />
 
                 {/* Full Name */}
-                <div>
+                <div className="mt-4">
                     <label className="block text-sm font-medium text-gray-300 mb-2">আপনার নাম লিখুন</label>
                     <TextField variant="outlined" fullWidth placeholder="আপনার নাম লিখুন"
-                        InputProps={{ className: "bg-gray-700 text-white border border-gray-600 rounded-lg" }} />
+                        InputProps={{ className: "bg-gray-700 h-12 text-white border border-gray-600 rounded-lg" }} />
                 </div>
 
                 {/* Phone Number */}
-                <div>
+                <div className="mt-4">
                     <label className="block text-sm font-medium text-gray-300 mb-2">আপনার WhatsApp নাম্বার লিখুন</label>
                     <TextField variant="outlined" fullWidth placeholder="আপনার WhatsApp নাম্বার লিখুন"
-                        InputProps={{ className: "bg-gray-700 text-white border border-gray-600 rounded-lg" }} />
+                        InputProps={{ className: "bg-gray-700 h-12 text-white border border-gray-600 rounded-lg" }} />
                 </div>
 
                 {/* Language Selection */}
@@ -68,16 +68,16 @@ function Pages2() {
                 <div>
                     <div className="flex justify-between gap-2">
                         <label className="block text-sm font-medium text-gray-300 mb-2">কোন সাইট নিবেন সিলেক্ট করুন</label>
-                        <label className="block text-sm font-medium text-gray-300">রেট</label>
+                        <label className="block text-sm font-medium text-gray-300 me-14">রেট</label>
                     </div>
-                    <div className="flex items-center gap-2 mb-4">
-                        <Select value={site} onChange={handleSiteChange} fullWidth className="bg-gray-800 text-white" displayEmpty>
+                    <div className="flex items-center gap-2 mb-4  whitespace-nowrap">
+                        <Select value={site} onChange={handleSiteChange} fullWidth className="bg-gray-800 text-white h-12" displayEmpty>
                             {site === "" && <MenuItem value="" disabled>সাইট সিলেক্ট করুন</MenuItem>}
                             {siteOptions.map(({ name, rate }) => (
                                 <MenuItem key={name} value={name}>{name} {rate}</MenuItem>
                             ))}
                         </Select>
-                        <Select value={rate} className="bg-gray-800 text-white min-w-20">
+                        <Select value={rate} className="bg-gray-800 h-12 text-white min-w-20">
                             <MenuItem value={rate}>{rate}</MenuItem>
                         </Select>
                     </div>
