@@ -12,7 +12,7 @@ function Pages2() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-black text-white">
-            <div className="max-w-lg w-full bg-gray-900 p-6 rounded-lg shadow-lg ">
+            <div className="max-w-lg w-full bg-gray-900 p-2.5 rounded-lg shadow-lg ">
                 {/* Banner */}
                 <div className="mb-4">
                     <img src="/banner2.jpg" alt="Banner" className="w-full rounded-lg" />
@@ -68,7 +68,7 @@ function Pages2() {
                         <MenuItem value="betx365.world">betx365.world</MenuItem>
                     </Select>
                     <Select value={rate} onChange={(e) => setRate(e.target.value)} className="bg-gray-800 text-white">
-                        <MenuItem value="23%">23%</MenuItem>
+                        <MenuItem value="23টা">23টা</MenuItem>
                     </Select>
                 </div>
 
