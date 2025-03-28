@@ -91,11 +91,27 @@ function Pages2() {
 
                 {/* Language Selection */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">সাইট ক্যাটাগরি সিলেক্ট করুন</label>
-                    <div className="flex gap-4 h-12 mb-4 whitespace-nowrap" >
+                    <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">
+                        সাইট ক্যাটাগরি সিলেক্ট করুন
+                    </label>
+                    <div className="flex gap-4 h-12 mb-4 whitespace-nowrap">
                         {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang, index) => (
-                            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} key={lang} onClick={() => setLanguage(lang)}
-                                className={`flex-1 py-2 px-4 rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"}`}>{lang}</motion.button>
+                            <motion.button
+                                key={lang}
+                                onClick={() => {
+                                    if (language !== lang) {
+                                        setSite(""); // ক্যাটাগরি চেঞ্জ হলে সাইট রিসেট হবে
+                                        setRate(""); // রেটও রিসেট হবে
+                                    }
+                                    setLanguage(lang);
+                                }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className={`flex-1 py-2 px-4 rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"
+                                    }`}
+                            >
+                                {lang}
+                            </motion.button>
                         ))}
                     </div>
                 </div>
@@ -103,23 +119,57 @@ function Pages2() {
                 {/* Site Selection */}
                 <div>
                     <div className="flex justify-between gap-2">
-                        <label className="block text-sm font-medium text-gray-300 mb-2">কোন সাইট নিবেন সিলেক্ট করুন</label>
-                        <label className="block text-sm font-medium text-gray-300 me-14">রেট</label>
+                        <label className="block text-sm font-medium text-gray-300 mb-2">
+                            কোন সাইট নিবেন সিলেক্ট করুন
+                        </label>
+                        <label className="block text-sm font-medium text-gray-300 me-14">
+                            রেট
+                        </label>
                     </div>
-                    <div className="flex items-center gap-2 mb-4  whitespace-nowrap">
-                        <Select value={site} onChange={handleSiteChange} fullWidth className="bg-gray-800 text-white h-12" displayEmpty>
+                    <div className="flex items-center gap-2 mb-4 whitespace-nowrap">
+                        <Select
+                            value={site}
+                            onChange={handleSiteChange}
+                            fullWidth
+                            displayEmpty
+                            MenuProps={{
+                                PaperProps: {
+                                    sx: {
+                                        backgroundColor: "#1F2937",
+                                        color: "white",
+                                    },
+                                },
+                            }}
+                            sx={{
+                                backgroundColor: "#1F2937", // bg-gray-800
+                                color: "white",
+                                height: "48px", // h-12
+                                "& .MuiOutlinedInput-root": {
+                                    "& fieldset": {
+                                        borderColor: "#4B5563", // Default border color (gray-600)
+                                    },
+                                    "&:hover fieldset": {
+                                        borderColor: "#6D28D9", // Hover border color (purple-700)
+                                    },
+                                    "&.Mui-focused fieldset": {
+                                        borderColor: "#6D28D9", // Focus border color (purple-700)
+                                        borderWidth: "1px", // Focus border width (2px)
+                                    },
+                                },
+                            }}
+                        >
                             {site === "" && <MenuItem value="" disabled>সাইট সিলেক্ট করুন</MenuItem>}
-                            {siteOptions.map(({ name, rate }) => (
+                            {siteOptions.map(({ name }) => (
                                 <MenuItem key={name} value={name}>
-                                    <div className="flex justify-between items-center w-full">
-                                        <span className="text-sm">{name}</span>
-                                        <span className="text-sm">{rate}</span>
-                                    </div>
+                                    {name}
                                 </MenuItem>
                             ))}
                         </Select>
-                        <div value={rate} className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20">
-                            <MenuItem value={rate}>{rate}</MenuItem>
+
+
+                        {/* রেট আলাদা বক্সে দেখাবে */}
+                        <div className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
+                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-gray-400 text-xs">00টা</span>}
                         </div>
                     </div>
                 </div>
