@@ -46,7 +46,7 @@ function Pages2() {
 
                 {/* Language Selection */}
                 <label className="block text-sm font-medium text-gray-300 mb-2">সাইট  ক্যাটাগরি সিলেক্ট করুন</label>
-                <div className="flex gap-2 mb-4">
+                <div className="flex gap-2 mb-4 whitespace-nowrap">
                     {['বাংলা', 'ডলার', 'সেমক ডিপোজিট'].map((lang) => (
                         <button
                             key={lang}
@@ -66,9 +66,15 @@ function Pages2() {
                 <div className="flex items-center gap-2 mb-4">
                     <Select value={site} onChange={(e) => setSite(e.target.value)} fullWidth className="bg-gray-800 text-white">
                         <MenuItem value="betx365.world">betx365.world</MenuItem>
+                        <MenuItem value="betx300.world">betx300.world</MenuItem>
+                        <MenuItem value="betx375.world">betx375.world</MenuItem>
+                        <MenuItem value="betx385.world">betx385.world</MenuItem>
                     </Select>
                     <Select value={rate} onChange={(e) => setRate(e.target.value)} className="bg-gray-800 text-white">
                         <MenuItem value="23টা">23টা</MenuItem>
+                        <MenuItem value="25টা">25টা</MenuItem>
+                        <MenuItem value="27টা">27টা</MenuItem>
+                        <MenuItem value="30টা">30টা</MenuItem>
                     </Select>
                 </div>
 
