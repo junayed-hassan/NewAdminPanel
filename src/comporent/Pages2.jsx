@@ -61,7 +61,7 @@ function Pages2() {
                 {/* Site Selection */}
                 <div className="flex justify-between gap-2 ">
                     <label className="block text-sm font-medium text-gray-300 mb-2">কোন সাইট নিবেন সিলেক্ট করুন</label>
-                    <label className="block text-sm font-medium text-gray-300 me-[54px] mb-2">রেট</label>
+                    <label className="block text-sm font-medium text-gray-300 me-6 mb-2">রেট</label>
                 </div>
                 <div className="flex items-center gap-2 mb-4">
                     <Select value={site} onChange={(e) => setSite(e.target.value)} fullWidth className="bg-gray-800 text-white">
@@ -96,8 +96,8 @@ function Pages2() {
                     />
 
                     {/* WhatsApp Button */}
-                    <div className="mt-4">
-                        <button className="bg-green-500 px-3 py-2.5 rounded-full">
+                    <div className="fixed bottom-5 right-5">
+                        <button className="bg-green-500 px-3 py-2.5 rounded-full shadow-lg">
                             <WhatsApp className="text-white" />
                         </button>
                     </div>
