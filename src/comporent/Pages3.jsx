@@ -1,5 +1,8 @@
+import { useState } from "react";
 
 function Pages3() {
+    const [selectedPayment, setSelectedPayment] = useState(null);
+
     return (
         <div className="min-h-screen bg-neutral-900 text-white flex flex-col items-center p-4">
             {/* Header */}
@@ -17,31 +20,31 @@ function Pages3() {
 
             {/* Payment Options */}
             <div className="w-full max-w-md text-gray-300 font-[600] flex justify-around mb-5 items-center bg-neutral-800 p-4 rounded-lg">
-                <div className="flex flex-col items-center">
-                    <img src="./bkash.png"
-                        alt="Bkash" className="w-16 h-16 object-contain rounded-xl" />
+                <div className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedPayment("bkash") }>
+                    <img src="./bkash.png" alt="Bkash" className="w-16 h-16 object-contain rounded-xl" />
                     <span className="text-lg mt-2">বিকাশ</span>
                 </div>
-                <div className="flex flex-col items-center">
-                    <img src="./nagad.png"
-                        alt="Nagad" className="w-16 h-16 object-contain rounded-xl" />
+                <div className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedPayment("nagad") }>
+                    <img src="./nagad.png" alt="Nagad" className="w-16 h-16 object-contain rounded-xl" />
                     <span className="text-lg mt-2">নগদ</span>
                 </div>
-                <div className="flex flex-col items-center">
-                    <img src="./roket.png"
-                        alt="Rocket" className="w-16 h-16 object-contain rounded-xl" />
+                <div className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedPayment("rocket") }>
+                    <img src="./roket.png" alt="Rocket" className="w-16 h-16 object-contain rounded-xl" />
                     <span className="text-lg mt-2">রকেট</span>
                 </div>
             </div>
 
             {/* Payment Button */}
-            <button className="w-full mt-auto max-w-md font-[600] text-lg h-12 inline-flex items-center justify-center rounded-md 
-                       bg-[#6c00f6] text-gray-300 px-6 
-                      shadow-lg shadow-neutral-500/20 transition active:scale-95">
+            <button 
+                className={`w-full mt-auto max-w-md font-[600] text-lg h-12 inline-flex items-center justify-center rounded-md 
+                           px-6 shadow-lg shadow-neutral-500/20 transition active:scale-95 
+                           ${selectedPayment ? "bg-sky-700 text-gray-300" : "bg-neutral-800 text-gray-300 cursor-not-allowed"}`}
+                disabled={!selectedPayment}
+            >
                 পেমেন্ট করুন ১০০০ টাকা
             </button>
         </div>
-    )
+    );
 }
 
-export default Pages3
+export default Pages3;
