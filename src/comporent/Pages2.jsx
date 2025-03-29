@@ -94,28 +94,27 @@ function Pages2() {
                         সাইট ক্যাটাগরি সিলেক্ট করুন
                     </label>
                     <div className="flex gap-2 h-12 mb-4 whitespace-nowrap">
-    {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang) => (
-        <motion.button
-            key={lang}
-            onClick={() => {
-                if (language !== lang) {
-                    setSite(""); // ক্যাটাগরি চেঞ্জ হলে সাইট রিসেট হবে
-                    setRate(""); // রেটও রিসেট হবে
-                }
-                setLanguage(lang);
-            }}
-            whileHover={{ scale: 1.05 }} 
-            whileTap={{ scale: 2 }} // ক্লিক করলে অনেক ছোট হবে
-            animate={{ scale: language === lang ? [0.6, 1] : 1 }} // ছোট হয়ে স্বাভাবিক হবে
-            transition={{ duration: 0, ease: "easeOut" }} // স্মুথ অ্যানিমেশন
-            className={`flex-1 py-2 px-3 text-gray-300 rounded-md transition-all duration-300 ${
-                language === lang ? "bg-purple-700" : "bg-gray-700"
-            }`}
-        >
-            {lang}
-        </motion.button>
-    ))}
-</div>
+                        {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang) => (
+                            <motion.button
+                                key={lang}
+                                onClick={() => {
+                                    if (language !== lang) {
+                                        setSite(""); // ক্যাটাগরি চেঞ্জ হলে সাইট রিসেট হবে
+                                        setRate(""); // রেটও রিসেট হবে
+                                    }
+                                    setLanguage(lang);
+                                }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 1.5 }} // ক্লিক করলে অনেক ছোট হবে
+                                animate={{ scale: language === lang ? [0.6, 1] : 1 }} // ছোট হয়ে স্বাভাবিক হবে
+                                transition={{ duration: 0, ease: "easeOut" }} // স্মুথ অ্যানিমেশন
+                                className={`flex-1 py-2 px-3 text-gray-300 rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"
+                                    }`}
+                            >
+                                {lang}
+                            </motion.button>
+                        ))}
+                    </div>
 
                 </div>
 
