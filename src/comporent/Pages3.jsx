@@ -9,26 +9,26 @@ function Pages3() {
             <h1 className="text-center w-full py-4 mb-2 shadow-2xl text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">পেমেন্ট মেথড সিলেক্ট করুন</h1>
 
             {/* Banner */}
-            <div className="w-full max-w-md rounded-lg overflow-hidden mb-4">
+            <div className="w-full max-w-md rounded-lg overflow-hidden mb-4 animate-fade-in">
                 <img src="./banner2.jpg" alt="Payment Banner" className="w-full" />
             </div>
 
             {/* Mobile Banking Section */}
-            <div className="w-full max-w-md bg-neutral-800 rounded-lg p-4 text-center mb-4">
+            <div className="w-full max-w-md bg-neutral-800 rounded-lg p-4 text-center mb-4 animate-slide-up">
                 <h2 className="text-lg font-[600] text-gray-300">মোবাইল ব্যাংকিং</h2>
             </div>
 
             {/* Payment Options */}
-            <div className="w-full max-w-md text-gray-300 font-[600] flex justify-around mb-5 items-center bg-neutral-800 p-4 rounded-lg">
-                <div className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedPayment("bkash") }>
+            <div className="w-full max-w-md text-gray-300 font-[600] flex justify-around mb-5 items-center bg-neutral-800 p-4 rounded-lg animate-slide-up">
+                <div className="flex flex-col items-center cursor-pointer transition transform hover:scale-110" onClick={() => setSelectedPayment("bkash") }>
                     <img src="./bkash.png" alt="Bkash" className="w-16 h-16 object-contain rounded-xl" />
                     <span className="text-lg mt-2">বিকাশ</span>
                 </div>
-                <div className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedPayment("nagad") }>
+                <div className="flex flex-col items-center cursor-pointer transition transform hover:scale-110" onClick={() => setSelectedPayment("nagad") }>
                     <img src="./nagad.png" alt="Nagad" className="w-16 h-16 object-contain rounded-xl" />
                     <span className="text-lg mt-2">নগদ</span>
                 </div>
-                <div className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedPayment("rocket") }>
+                <div className="flex flex-col items-center cursor-pointer transition transform hover:scale-110" onClick={() => setSelectedPayment("rocket") }>
                     <img src="./roket.png" alt="Rocket" className="w-16 h-16 object-contain rounded-xl" />
                     <span className="text-lg mt-2">রকেট</span>
                 </div>
@@ -37,8 +37,8 @@ function Pages3() {
             {/* Payment Button */}
             <button 
                 className={`w-full mt-auto max-w-md font-[600] text-lg h-12 inline-flex items-center justify-center rounded-md 
-                           px-6 shadow-lg shadow-neutral-500/20 transition active:scale-95 
-                           ${selectedPayment ? "bg-sky-700 text-gray-300" : "bg-neutral-800 text-gray-300 cursor-not-allowed"}`}
+                           px-6 shadow-lg shadow-neutral-500/20 transition active:scale-95 transform 
+                           ${selectedPayment ? "bg-sky-700 text-gray-300 hover:scale-105" : "bg-neutral-800 text-gray-300 cursor-not-allowed"}`}
                 disabled={!selectedPayment}
             >
                 পেমেন্ট করুন ১০০০ টাকা
