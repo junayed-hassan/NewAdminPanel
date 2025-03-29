@@ -8,7 +8,7 @@ function Pages2() {
     const [agree, setAgree] = useState(false);
     const [loading, setLoading] = useState(false);
     const [site, setSite] = useState("");
-    const [rate, setRate] = useState("23টা");
+    const [rate, setRate] = useState("00টা");
 
     const siteOptions = [
         { name: "betx300.world", rate: "23টা" },
@@ -20,7 +20,7 @@ function Pages2() {
         const selectedSite = e.target.value;
         const matchedSite = siteOptions.find((s) => s.name === selectedSite);
         setSite(selectedSite);
-        setRate(matchedSite ? matchedSite.rate : "23টা");
+        setRate(matchedSite ? matchedSite.rate : "00টা");
     };
 
     const handleSubmit = () => {
@@ -63,7 +63,6 @@ function Pages2() {
                         }} />
                 </div>
 
-
                 {/* Phone Number */}
                 <div className="mt-4">
                     <label className="block text-sm font-medium text-gray-300 mb-2">আপনার WhatsApp নাম্বার লিখুন</label>
@@ -105,7 +104,7 @@ function Pages2() {
                                     }
                                     setLanguage(lang);
                                 }}
-                                whileHover={{ scale: 1.05 }}
+                                whileHover={{ scale: 1.20 }}
                                 whileTap={{ scale: 0.95 }}
                                 className={`flex-1 py-2 px-4 rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"
                                     }`}
@@ -153,7 +152,7 @@ function Pages2() {
                                     },
                                     "&.Mui-focused fieldset": {
                                         borderColor: "#6D28D9", // Focus border color (purple-700)
-                                        borderWidth: "1px", // Focus border width (2px)
+                                        borderWidth: "0px", // Focus border width (2px)
                                     },
                                 },
                             }}
