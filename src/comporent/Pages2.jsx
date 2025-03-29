@@ -31,10 +31,10 @@ function Pages2() {
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}
             className="min-h-screen flex items-center justify-center bg-black text-white">
-            <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+            <motion.div initial={{ y: 0, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-lg w-full bg-gray-900 p-4 rounded-lg shadow-lg">
-                <h1 className="text-center shadow-2xl mb-3 py-2.5 text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">
+                <h1 className="text-center py-4 mb-2 shadow-2xl text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">
                     এজেন্ট সাইন আপ করুন
                 </h1>
                 {/* Banner */}
@@ -46,6 +46,7 @@ function Pages2() {
                     <TextField
                         variant="outlined"
                         fullWidth
+                        required
                         placeholder="...."
                         sx={{
                             backgroundColor: "#1F2937", // bg-gray-800
@@ -81,6 +82,8 @@ function Pages2() {
                     <TextField
                         variant="outlined"
                         fullWidth
+                        required // এই ইনপুটটি আবশ্যক
+                        type="tel" // ফোন নাম্বার ইনপুট টাইপ
                         placeholder="...."
                         sx={{
                             backgroundColor: "#1F2937", // bg-gray-800
@@ -127,7 +130,7 @@ function Pages2() {
                                     }
                                     setLanguage(lang);
                                 }}
-                                className={`inline-flex font-[600] h-12 border border-gray-600 items-center justify-center rounded-md px-6 text-xs text-neutral-50 shadow-sm shadow-neutral-500/20 transition active:scale-95 ${language === lang ? "bg-sky-700" : "bg-gray-800"
+                                className={`inline-flex font-[600] h-12 border border-gray-600 items-center justify-center rounded-md w-full px-6 text-[13px] text-neutral-50 shadow-sm shadow-neutral-500/20 transition active:scale-95 ${language === lang ? "bg-sky-700" : "bg-gray-800"
                                     }`}
                             >
                                 {lang}
@@ -198,7 +201,7 @@ function Pages2() {
 
                         {/* রেট আলাদা বক্সে দেখাবে */}
                         <div className="bg-gray-800 border border-gray-700 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
-                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm font-[600]">00টা</span>}
+                            {rate ? <span className="text-sm font-[600]">{rate}</span> : <span className="text-white text-sm font-[600]">00টা</span>}
                         </div>
                     </div>
                 </div>
