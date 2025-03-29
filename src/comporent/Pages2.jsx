@@ -93,29 +93,30 @@ function Pages2() {
                     <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">
                         সাইট ক্যাটাগরি সিলেক্ট করুন
                     </label>
+                    <div className="flex gap-2 h-12 mb-4 whitespace-nowrap">
+    {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang) => (
+        <motion.button
+            key={lang}
+            onClick={() => {
+                if (language !== lang) {
+                    setSite(""); // ক্যাটাগরি চেঞ্জ হলে সাইট রিসেট হবে
+                    setRate(""); // রেটও রিসেট হবে
+                }
+                setLanguage(lang);
+            }}
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 2 }} // ক্লিক করলে অনেক ছোট হবে
+            animate={{ scale: language === lang ? [0.6, 1] : 1 }} // ছোট হয়ে স্বাভাবিক হবে
+            transition={{ duration: 0, ease: "easeOut" }} // স্মুথ অ্যানিমেশন
+            className={`flex-1 py-2 px-3 text-gray-300 rounded-md transition-all duration-300 ${
+                language === lang ? "bg-purple-700" : "bg-gray-700"
+            }`}
+        >
+            {lang}
+        </motion.button>
+    ))}
+</div>
 
-                    <div className="flex gap-4 h-12 mb-4 whitespace-nowrap">
-                        {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang, index) => (
-                            <motion.button className="" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <motion.button
-                                key={lang}
-                                onClick={() => {
-                                    if (language !== lang) {
-                                        setSite(""); // ক্যাটাগরি চেঞ্জ হলে সাইট রিসেট হবে
-                                        setRate(""); // রেটও রিসেট হবে
-                                    }
-                                    setLanguage(lang);
-                                }}
-                                whileHover={{ scale: 1.10 }}
-                                whileTap={{ scale: 0.95 }}
-                                className={`flex-1 py-3 px-4 lg:px-[43px] w-full rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"
-                                    }`}
-                            >
-                                {lang}
-                            </motion.button>
-                            </motion.button>
-                        ))}
-                    </div>
                 </div>
 
                 {/* Site Selection */}
@@ -171,14 +172,14 @@ function Pages2() {
 
                         {/* রেট আলাদা বক্সে দেখাবে */}
                         <div className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
-                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm font-stretch-ultra-expanded">00টা</span>}
+                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm">00টা</span>}
                         </div>
                     </div>
                 </div>
 
                 {/* Check Site Button */}
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 bg-purple-700 rounded-md mb-4">সাইট চেক করুন</motion.button>
+                    className="w-full py-3 bg-purple-700 rounded-md mb-4 text-gray-300">সাইট চেক করুন</motion.button>
 
                 {/* Info Text */}
                 <p className="text-sm text-red-500 mb-4">*এজেন্ট একাউন্ট কনফার্ম করতে অন্ততঃপক্ষে 1000 টাকা ডিপোজিট করতে হবে।</p>
@@ -200,12 +201,12 @@ function Pages2() {
                 </div>
 
                 {/* Submit Button */}
-                <motion.button className="w-full" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <motion.div className="w-full" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <button onClick={handleSubmit} disabled={!agree || loading}
-                        className={`w-full py-3 rounded-md mt-4 flex justify-center items-center ${agree ? "bg-purple-700" : "bg-gray-600 cursor-not-allowed"}`}>
+                        className={`w-full py-3 text-gray-300 rounded-md mt-4 flex justify-center items-center ${agree ? "bg-purple-700" : "bg-gray-600 cursor-not-allowed"}`}>
                         {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
                     </button>
-                </motion.button>
+                </motion.div>
 
             </motion.div>
         </motion.div>
