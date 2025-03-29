@@ -165,6 +165,8 @@ function Pages2() {
                             sx={{
                                 backgroundColor: "#1F2937", // bg-gray-800
                                 color: "white",
+                                fontSize: "13px",
+                                fontWeight: "600",
                                 height: "48px", // h-12
                                 "& .MuiOutlinedInput-root": {
                                     "& fieldset": {
