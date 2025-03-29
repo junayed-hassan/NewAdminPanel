@@ -34,7 +34,7 @@ function Pages2() {
             <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-lg w-full bg-gray-900 p-4 rounded-lg shadow-lg">
-
+                <h1 className="text-center pb-4 text-xl font-bold text-gray-300">এজেন্ট সাইন আপ করুন </h1>
                 {/* Banner */}
                 <motion.img src="/banner2.jpg" alt="Banner" className="w-full rounded-lg" initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} />
 
@@ -42,50 +42,20 @@ function Pages2() {
                 <div className="mt-4">
                     <label className="block text-sm font-medium text-gray-300 mb-2">আপনার নাম লিখুন</label>
                     <TextField variant="outlined" fullWidth placeholder="...."
-                        sx={{
-                            "& .MuiOutlinedInput-root": {
-                                backgroundColor: "#374151", // bg-gray-700
-                                color: "white",
-                                height: "3rem",
-                                borderRadius: "0.5rem",
-                                "& fieldset": {
-                                    borderColor: "#4B5563", // border-gray-600 (ডিফল্ট কালার)
-                                },
-                                "&:hover fieldset": {
-                                    borderColor: "#9333ea", // purple-700 (হোভার করলে)
-                                },
-                                "&.Mui-focused fieldset": {
-                                    borderColor: "#9333ea", // purple-700 (ফোকাস হলে)
-                                    borderWidth: "1px",
-                                    outline: "none" // Outline remove
-                                }
-                            }
-                        }} />
+                        InputProps={{
+                            className: "bg-gray-700 h-12 text-white border border-gray-600 rounded-lg",
+                        }}
+                    />
                 </div>
 
                 {/* Phone Number */}
                 <div className="mt-4">
                     <label className="block text-sm font-medium text-gray-300 mb-2">আপনার WhatsApp নাম্বার লিখুন</label>
                     <TextField variant="outlined" fullWidth placeholder="...."
-                        sx={{
-                            "& .MuiOutlinedInput-root": {
-                                backgroundColor: "#374151", // bg-gray-700
-                                color: "white",
-                                height: "3rem",
-                                borderRadius: "0.5rem",
-                                "& fieldset": {
-                                    borderColor: "#4B5563", // border-gray-600 (ডিফল্ট কালার)
-                                },
-                                "&:hover fieldset": {
-                                    borderColor: "#9333ea", // purple-700 (হোভার করলে)
-                                },
-                                "&.Mui-focused fieldset": {
-                                    borderColor: "#9333ea", // purple-700 (ফোকাস হলে)
-                                    borderWidth: "1px",
-                                    outline: "none" // Outline remove
-                                }
-                            }
-                        }} />
+                        InputProps={{
+                            className: "bg-gray-700 h-12 text-white border border-gray-600 rounded-lg",
+                        }}
+                    />
                 </div>
 
                 {/* Language Selection */}
@@ -93,9 +63,9 @@ function Pages2() {
                     <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">
                         সাইট ক্যাটাগরি সিলেক্ট করুন
                     </label>
-                    <div className="flex gap-2 h-12 mb-4 whitespace-nowrap">
+                    <div className="flex gap-2 justify-between h-12 mb-4 whitespace-nowrap">
                         {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang) => (
-                            <motion.button
+                            <button
                                 key={lang}
                                 onClick={() => {
                                     if (language !== lang) {
@@ -104,17 +74,14 @@ function Pages2() {
                                     }
                                     setLanguage(lang);
                                 }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 1.5 }} // ক্লিক করলে অনেক ছোট হবে
-                                animate={{ scale: language === lang ? [0.6, 1] : 1 }} // ছোট হয়ে স্বাভাবিক হবে
-                                transition={{ duration: 0, ease: "easeOut" }} // স্মুথ অ্যানিমেশন
-                                className={`flex-1 py-2 px-3 text-gray-300 rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"
+                                className={`inline-flex h-12 items-center justify-center rounded-md px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 ${language === lang ? "bg-sky-700" : "bg-gray-700"
                                     }`}
                             >
                                 {lang}
-                            </motion.button>
+                            </button>
                         ))}
                     </div>
+
 
                 </div>
 
@@ -158,6 +125,9 @@ function Pages2() {
                                         borderWidth: "0px", // Focus border width (2px)
                                     },
                                 },
+                                "& .MuiSvgIcon-root": {
+                                    color: "white", // Arrow icon color
+                                },
                             }}
                         >
                             {site === "" && <MenuItem value="" disabled>সাইট সিলেক্ট করুন</MenuItem>}
@@ -169,6 +139,7 @@ function Pages2() {
                         </Select>
 
 
+
                         {/* রেট আলাদা বক্সে দেখাবে */}
                         <div className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
                             {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm">00টা</span>}
@@ -178,7 +149,7 @@ function Pages2() {
 
                 {/* Check Site Button */}
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 bg-purple-700 rounded-md mb-4 text-gray-300">সাইট চেক করুন</motion.button>
+                    className="w-full py-3 bg-sky-700 rounded-md mb-4 text-gray-300">সাইট চেক করুন</motion.button>
 
                 {/* Info Text */}
                 <p className="text-sm text-red-500 mb-4">*এজেন্ট একাউন্ট কনফার্ম করতে অন্ততঃপক্ষে 1000 টাকা ডিপোজিট করতে হবে।</p>
@@ -187,11 +158,11 @@ function Pages2() {
                 {/* Agreement Checkbox & WhatsApp */}
                 <div className="flex justify-between items-center">
                     <FormControlLabel control={<Checkbox sx={{
-                        color: "#9333ea", // আনচেকড অবস্থায় কালার Purple
+                        color: "#0369A1", // আনচেকড অবস্থায় Sky-700
                         "&.Mui-checked": {
-                            color: "#9333ea" // চেকড অবস্থায়ও Purple
+                            color: "#0369A1" // চেকড অবস্থায়ও Sky-700
                         }
-                    }} checked={agree} onChange={() => setAgree(!agree)} />} label="আমি এই শর্তে রাজি আছি" className="text-sm text-purple-700 font-bold" />
+                    }} checked={agree} onChange={() => setAgree(!agree)} />} label="আমি এই শর্তে রাজি আছি" className="text-sm text-sky-700 font-bold" />
                     <motion.div className="fixed bottom-18 right-5" animate={{ scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                         <button className="bg-green-500 px-3 py-2.5 rounded-full shadow-lg">
                             <WhatsApp className="text-white" />
@@ -202,7 +173,7 @@ function Pages2() {
                 {/* Submit Button */}
                 <motion.div className="w-full" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <button onClick={handleSubmit} disabled={!agree || loading}
-                        className={`w-full py-3 text-gray-300 rounded-md mt-4 flex justify-center items-center ${agree ? "bg-purple-700" : "bg-gray-600 cursor-not-allowed"}`}>
+                        className={`w-full py-3 text-gray-300 rounded-md mt-4 flex justify-center items-center ${agree ? "bg-sky-700" : "bg-gray-600 cursor-not-allowed"}`}>
                         {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
                     </button>
                 </motion.div>
