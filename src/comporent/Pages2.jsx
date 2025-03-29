@@ -34,7 +34,7 @@ function Pages2() {
             <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-lg w-full bg-gray-900 p-4 rounded-lg shadow-lg">
-                <h1 className="text-center mb-3 py-2.5 text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">
+                <h1 className="text-center shadow-2xl mb-3 py-2.5 text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">
                     এজেন্ট সাইন আপ করুন
                 </h1>
                 {/* Banner */}
@@ -42,7 +42,7 @@ function Pages2() {
 
                 {/* Full Name */}
                 <div className="mt-4">
-                    <label className="block text-sm font-medium text-gray-300 mb-2">আপনার নাম লিখুন</label>
+                    <label className="block text-sm font-[600] text-gray-300 mb-2">আপনার নাম লিখুন</label>
                     <TextField
                         variant="outlined"
                         fullWidth
@@ -77,7 +77,7 @@ function Pages2() {
 
                 {/* Phone Number */}
                 <div className="mt-4">
-                    <label className="block text-sm font-medium text-gray-300 mb-2">আপনার WhatsApp নাম্বার লিখুন</label>
+                    <label className="block text-sm font-[600] text-gray-300 mb-2">আপনার WhatsApp নাম্বার লিখুন</label>
                     <TextField
                         variant="outlined"
                         fullWidth
@@ -116,7 +116,7 @@ function Pages2() {
                     <label className="block text-sm font-[600] text-gray-300 mb-2 mt-4">
                         সাইট ক্যাটাগরি সিলেক্ট করুন
                     </label>
-                    <div className="flex gap-2 justify-between h-12 mb-4 whitespace-nowrap">
+                    <div className="flex gap-2 font-[600] justify-between h-12 mb-4 ">
                         {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang) => (
                             <button
                                 key={lang}
@@ -127,7 +127,7 @@ function Pages2() {
                                     }
                                     setLanguage(lang);
                                 }}
-                                className={`inline-flex h-12 items-center justify-center rounded-md px-6 font-medium text-neutral-50 shadow-sm shadow-neutral-500/20 transition active:scale-95 ${language === lang ? "bg-sky-700" : "bg-gray-800"
+                                className={`inline-flex font-[600] h-12 border border-gray-600 items-center justify-center rounded-md px-6 text-xs text-neutral-50 shadow-sm shadow-neutral-500/20 transition active:scale-95 ${language === lang ? "bg-sky-700" : "bg-gray-800"
                                     }`}
                             >
                                 {lang}
@@ -141,10 +141,10 @@ function Pages2() {
                 {/* Site Selection */}
                 <div>
                     <div className="flex justify-between gap-2">
-                        <label className="block text-sm font-[600] text-gray-300 mb-2">
+                        <label className="block text-sm whitespace-nowrap font-[600] text-gray-300 mb-2">
                             কোন সাইট নিবেন সিলেক্ট করুন
                         </label>
-                        <label className="block text-sm font-medium text-gray-300 me-14">
+                        <label className="block text-sm font-[600] text-gray-300 me-14">
                             রেট
                         </label>
                     </div>
@@ -195,7 +195,7 @@ function Pages2() {
 
                         {/* রেট আলাদা বক্সে দেখাবে */}
                         <div className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
-                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm">00টা</span>}
+                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm font-[600]">00টা</span>}
                         </div>
                     </div>
                 </div>
@@ -205,17 +205,27 @@ function Pages2() {
                     className="w-full py-3 text-sm bg-sky-700 font-[600] rounded-md mb-4 text-gray-300">সাইট চেক করুন</motion.button>
 
                 {/* Info Text */}
-                <p className="text-sm text-red-500 mb-4">*এজেন্ট একাউন্ট কনফার্ম করতে অন্ততঃপক্ষে 1000 টাকা ডিপোজিট করতে হবে।</p>
-                <p className="text-sm text-gray-400 mb-4 text-justify">অগ্রিম পেমেন্ট করার মূল উদ্দেশ্য হলো, অনেকে একাউন্ট খুলে পরবর্তীতে কোন ব্যালেন্স নেই না। প্যানেল সম্পূর্ণ খালি থাকে, তাই যারা সঠিকভাবে এজেন্ট নেবে, তারা অবশ্যই অ্যাডভান্স পেমেন্ট করে নিতে হবে।</p>
+                <p className="text-sm text-red-500 font-[600] text-justify mb-4">*এজেন্ট একাউন্ট কনফার্ম করতে অন্ততঃ পক্ষে 1000 টাকা ডিপোজিট করতে হবে।</p>
+                <p className="text-sm text-gray-400 font-[600] mb-4 text-justify">অগ্রিম পেমেন্ট করার মূল উদ্দেশ্য হলো, অনেকে একাউন্ট খুলে পরবর্তীতে কোন ব্যালেন্স নেই না। প্যানেল সম্পূর্ণ খালি থাকে, তাই যারা সঠিকভাবে এজেন্ট নেবে, তারা অবশ্যই অ্যাডভান্স পেমেন্ট করে নিতে হবে।</p>
 
                 {/* Agreement Checkbox & WhatsApp */}
                 <div className="flex justify-between items-center">
-                    <FormControlLabel control={<Checkbox sx={{
-                        color: "#0369A1", // আনচেকড অবস্থায় Sky-700
-                        "&.Mui-checked": {
-                            color: "#0369A1" // চেকড অবস্থায়ও Sky-700
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                sx={{
+                                    color: "#0369A1", // আনচেকড অবস্থায় Sky-700
+                                    "&.Mui-checked": {
+                                        color: "#0369A1" // চেকড অবস্থায়ও Sky-700
+                                    }
+                                }}
+                                checked={agree}
+                                onChange={() => setAgree(!agree)}
+                            />
                         }
-                    }} checked={agree} onChange={() => setAgree(!agree)} />} label="আমি এই শর্তে রাজি আছি" className="text-sm text-sky-700 font-bold" />
+                        label={<span className="text-sm font-semibold text-sky-700">আমি এই শর্তে রাজি আছি</span>}
+                    />
+
                     <motion.div className="fixed bottom-18 right-5" animate={{ scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                         <button className="bg-green-500 px-3 py-2.5 rounded-full shadow-lg">
                             <WhatsApp className="text-white" />
