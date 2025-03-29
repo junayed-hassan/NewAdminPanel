@@ -3,7 +3,7 @@ function Pages3() {
     return (
         <div className="min-h-screen bg-neutral-900 text-white flex flex-col items-center p-4">
             {/* Header */}
-            <h1 className="text-center w-md py-4 mb-2 shadow-2xl text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">পেমেন্ট মেথড সিলেক্ট করুন</h1>
+            <h1 className="text-center w-full py-4 mb-2 shadow-2xl text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">পেমেন্ট মেথড সিলেক্ট করুন</h1>
 
             {/* Banner */}
             <div className="w-full max-w-md rounded-lg overflow-hidden mb-4">
