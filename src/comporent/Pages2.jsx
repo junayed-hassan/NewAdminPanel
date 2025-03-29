@@ -34,7 +34,7 @@ function Pages2() {
             <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-lg w-full bg-gray-900 p-4 rounded-lg shadow-lg">
-                <h1 className="text-center mb-3 pt-2 pb-2 text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">
+                <h1 className="text-center mb-3 py-2.5 text-xl font-bold text-gray-300 bg-gray-900 sticky top-0 z-50">
                     এজেন্ট সাইন আপ করুন
                 </h1>
                 {/* Banner */}
