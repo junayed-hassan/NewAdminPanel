@@ -93,8 +93,10 @@ function Pages2() {
                     <label className="block text-sm font-medium text-gray-300 mb-2 mt-4">
                         সাইট ক্যাটাগরি সিলেক্ট করুন
                     </label>
+
                     <div className="flex gap-4 h-12 mb-4 whitespace-nowrap">
                         {["বাংলা", "ডলার", "সেমক ডিপোজিট"].map((lang, index) => (
+                            <motion.button className="" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <motion.button
                                 key={lang}
                                 onClick={() => {
@@ -104,12 +106,13 @@ function Pages2() {
                                     }
                                     setLanguage(lang);
                                 }}
-                                whileHover={{ scale: 1.20 }}
+                                whileHover={{ scale: 1.10 }}
                                 whileTap={{ scale: 0.95 }}
-                                className={`flex-1 py-2 px-4 rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"
+                                className={`flex-1 py-3 px-4 lg:px-[43px] w-full rounded-md transition-all duration-300 ${language === lang ? "bg-purple-700" : "bg-gray-700"
                                     }`}
                             >
                                 {lang}
+                            </motion.button>
                             </motion.button>
                         ))}
                     </div>
@@ -168,7 +171,7 @@ function Pages2() {
 
                         {/* রেট আলাদা বক্সে দেখাবে */}
                         <div className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
-                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-gray-400 text-xs">00টা</span>}
+                            {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm font-stretch-ultra-expanded">00টা</span>}
                         </div>
                     </div>
                 </div>
