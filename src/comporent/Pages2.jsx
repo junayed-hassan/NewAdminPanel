@@ -164,6 +164,7 @@ function Pages2() {
                             }}
                             sx={{
                                 backgroundColor: "#1F2937", // bg-gray-800
+                                border : "1px solid #374151", // Border color (gray-700)
                                 color: "white",
                                 fontSize: "13px",
                                 fontWeight: "600",
@@ -196,15 +197,19 @@ function Pages2() {
 
 
                         {/* রেট আলাদা বক্সে দেখাবে */}
-                        <div className="bg-gray-800 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
+                        <div className="bg-gray-800 border border-gray-700 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
                             {rate ? <span className="text-sm">{rate}</span> : <span className="text-white text-sm font-[600]">00টা</span>}
                         </div>
                     </div>
                 </div>
 
                 {/* Check Site Button */}
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 text-sm bg-sky-700 font-[600] rounded-md mb-4 text-gray-300">সাইট চেক করুন</motion.button>
+                <motion.button
+                    className="inline-flex h-12 items-center border border-gray-500 justify-center rounded-md bg-sky-700 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 w-full mb-4"
+                >
+                    সাইট চেক করুন
+                </motion.button>
+
 
                 {/* Info Text */}
                 <p className="text-sm text-red-500 font-[600] text-justify mb-4">*এজেন্ট একাউন্ট কনফার্ম করতে অন্ততঃ পক্ষে 1000 টাকা ডিপোজিট করতে হবে।</p>
@@ -236,12 +241,17 @@ function Pages2() {
                 </div>
 
                 {/* Submit Button */}
-                <motion.div className="w-full" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <button onClick={handleSubmit} disabled={!agree || loading}
-                        className={`w-full py-3 text-gray-300 font-[600] text-sm rounded-md mt-4 flex justify-center items-center ${agree ? "bg-sky-700" : "bg-gray-800 cursor-not-allowed"}`}>
+                <motion.div className="w-full" >
+                    <button
+                        onClick={handleSubmit}
+                        disabled={!agree || loading}
+                        className={`inline-flex h-12 border border-gray-500 items-center justify-center rounded-md px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 w-full mt-4
+            ${agree ? "bg-sky-700" : "bg-gray-800 cursor-not-allowed"}`}
+                    >
                         {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
                     </button>
                 </motion.div>
+
 
             </motion.div>
         </motion.div>
