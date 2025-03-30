@@ -2,7 +2,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Index from "../comporent/Index";
 import PaymentMethod from "../comporent/PaymentMethod";
-import Bkash from "../comporent/bnrPages/bkash";
+import Bkash from "../comporent/bnrPages/Bkash";
 import Nagad from "../comporent/bnrPages/Nagad";
 import Roket from "../comporent/bnrPages/Roket";
 
