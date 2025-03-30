@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { TextField, MenuItem, Select, Checkbox, FormControlLabel, CircularProgress } from "@mui/material";
 import { WhatsApp } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 function Pages2() {
     const [language, setLanguage] = useState("বাংলা");
@@ -167,7 +168,7 @@ function Pages2() {
                             }}
                             sx={{
                                 backgroundColor: "#1F2937", // bg-gray-800
-                                border : "1px solid #374151", // Border color (gray-700)
+                                border: "1px solid #374151", // Border color (gray-700)
                                 color: "white",
                                 fontSize: "13px",
                                 fontWeight: "600",
@@ -245,16 +246,17 @@ function Pages2() {
 
                 {/* Submit Button */}
                 <motion.div className="w-full" >
-                    <button
-                        onClick={handleSubmit}
-                        disabled={!agree || loading}
-                        className={`inline-flex h-12 border border-gray-500 items-center justify-center rounded-md px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 w-full mt-4
+                    <Link to="/pages3">
+                        <button
+                            onClick={handleSubmit}
+                            disabled={!agree || loading}
+                            className={`inline-flex h-12 border border-gray-500 items-center justify-center rounded-md px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 w-full mt-4
             ${agree ? "bg-sky-700" : "bg-gray-800 cursor-not-allowed"}`}
-                    >
-                        {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
-                    </button>
+                        >
+                            {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
+                        </button>
+                    </Link>
                 </motion.div>
-
 
             </motion.div>
         </motion.div>

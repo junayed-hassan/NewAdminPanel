@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Pages3() {
     const [selectedPayment, setSelectedPayment] = useState(null);
@@ -35,6 +36,7 @@ function Pages3() {
             </div>
 
             {/* Payment Button */}
+            <Link to="/Pages4" className="w-full max-w-md"> 
             <button 
                 className={`w-full mt-auto max-w-md font-[600] text-lg h-12 inline-flex items-center justify-center rounded-md 
                            px-6 shadow-lg shadow-neutral-500/20 transition active:scale-95 transform 
@@ -43,6 +45,7 @@ function Pages3() {
             >
                 পেমেন্ট করুন ১০০০ টাকা
             </button>
+            </Link>
         </div>
     );
 }
