@@ -35,7 +35,7 @@ function Roket() {
 
             {/* Confirm Button */}
             <button
-                className="w-full mt-auto max-w-md bg-[#8a288f] text-white font-bold py-3 rounded-lg text-center text-lg transition active:scale-95"
+                className="w-full mt-auto mb-4 max-w-md bg-[#8a288f] text-white font-bold py-3 rounded-lg text-center text-lg transition active:scale-95"
                 disabled={!transactionId}
             >
                 পেমেন্ট কনফার্ম করুন

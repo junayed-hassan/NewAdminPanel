@@ -35,7 +35,7 @@ function Pages4() {
 
             {/* Confirm Button */}
             <button
-                className="w-full mt-auto max-w-md bg-pink-600 text-white font-bold py-3 rounded-lg text-center text-lg transition active:scale-95"
+                className="w-full mt-auto mb-4 max-w-md bg-pink-600 text-white font-bold py-3 rounded-lg text-center text-lg transition active:scale-95"
                 disabled={!transactionId}
             >
                 পেমেন্ট কনফার্ম করুন
