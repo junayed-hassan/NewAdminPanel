@@ -42,9 +42,9 @@ function Pages3() {
             </div>
 
             {/* Payment Button */}
-            <Link to={selectedPayment ? `/payment-method/${selectedPayment}` : "#"} className="w-full max-w-md mt-auto">
+            <Link to={selectedPayment ? `/payment-method/${selectedPayment}` : "#"} className="w-full max-w-md mt-auto mb-4">
                 <button
-                    className={`w-full mt-auto max-w-md font-[600] text-lg h-12 inline-flex items-center justify-center rounded-md 
+                    className={`w-full max-w-md font-[600] text-lg h-12 inline-flex items-center justify-center rounded-md 
                                px-6 shadow-lg shadow-neutral-500/20 transition active:scale-95 transform 
                                ${selectedPayment ? "bg-sky-700 text-gray-300 hover:scale-105" : "bg-neutral-800 text-gray-300 cursor-not-allowed"}`}
                     disabled={!selectedPayment}
