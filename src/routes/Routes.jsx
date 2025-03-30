@@ -1,6 +1,6 @@
 
 import { createBrowserRouter } from "react-router-dom";
-import Index from "../comporent/index";
+import Index from "../comporent/Index";
 import PaymentMethod from "../comporent/PaymentMethod";
 import Bkash from "../comporent/bnrPages/bkash";
 import Nagad from "../comporent/bnrPages/Nagad";
