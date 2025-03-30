@@ -250,7 +250,7 @@ function Pages2() {
                         <button
                             onClick={handleSubmit}
                             disabled={!agree || loading}
-                            className={`inline-flex h-12 border border-gray-500 items-center justify-center rounded-md px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 w-full mt-4
+                            className={`inline-flex h-12 mb-3 border border-gray-500 items-center justify-center rounded-md px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 w-full mt-4
             ${agree ? "bg-sky-700" : "bg-gray-800 cursor-not-allowed"}`}
                         >
                             {loading ? <CircularProgress size={24} color="inherit" /> : "এগিয়ে যান"}
