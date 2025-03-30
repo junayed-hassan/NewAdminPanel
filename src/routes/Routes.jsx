@@ -1,22 +1,22 @@
 
 import { createBrowserRouter } from "react-router-dom";
-import Pages2 from "../comporent/Pages2";
-import Pages3 from "../comporent/Pages3";
-import Pages4 from "../comporent/Pages4";
+import Index from "../comporent/index";
+import PaymentMethod from "../comporent/PaymentMethod";
+import Bkash from "../comporent/bnrPages/bkash";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Pages2 />,
+        element: <Index />,
     },
     {
-        path: "/Pages3",
-        element: <Pages3 />,
+        path: "/payment-method",
+        element: <PaymentMethod />,
     },
     {
-        path: "/Pages4",
-        element: <Pages4 />,
+        path: "/payment-method/bkash",
+        element: <Bkash />,
     }
 ]);
 

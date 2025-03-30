@@ -246,7 +246,7 @@ function Pages2() {
 
                 {/* Submit Button */}
                 <motion.div className="w-full" >
-                    <Link to="/pages3">
+                    <Link to="/payment-method">
                         <button
                             onClick={handleSubmit}
                             disabled={!agree || loading}
