@@ -22,7 +22,7 @@ function Pages4() {
             </div>
 
             {/* Instructions */}
-            <div className="w-full max-w-md bg-neutral-800 p-4 rounded-lg mt-4 text-gray-300 text-sm">
+            <div className="w-full mb-4 max-w-md bg-neutral-800 p-4 rounded-lg mt-4 text-gray-300 text-sm">
                 <p>*247# ডায়াল করে আপনার <span className="text-pink-400">BKASH</span> মোবাইল মেনুতে যান অথবা <span className="text-pink-400">BKASH</span> অ্যাপে যান।</p>
                 <p className="mt-2"> <span className="text-pink-400 font-bold">"Send Money"</span> -এ ক্লিক করুন।</p>
                 <p className="mt-2">প্রাপক নম্বর হিসেবে এই নম্বরটি লিখুন: <span className="text-pink-400 font-bold">01303260848</span></p>

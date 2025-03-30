@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Index from "../comporent/index";
 import PaymentMethod from "../comporent/PaymentMethod";
 import Bkash from "../comporent/bnrPages/bkash";
+import Nagad from "../comporent/bnrPages/Nagad";
+import Roket from "../comporent/bnrPages/Roket";
 
 
 const router = createBrowserRouter([
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
     {
         path: "/payment-method/bkash",
         element: <Bkash />,
+    },
+    {
+        path: "/payment-method/nagad",
+        element: <Nagad />,
+    },
+    {
+        path: "/payment-method/rocket",
+        element: <Roket />,
     }
 ]);
 
