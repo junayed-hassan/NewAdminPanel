@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Roket() {
     const [transactionId, setTransactionId] = useState("");
@@ -34,12 +35,14 @@ function Roket() {
             </div>
 
             {/* Confirm Button */}
+            <Link to="/payment-success" className="w-full max-w-md mt-auto mb-4">
             <button
                 className="w-full mt-auto mb-4 max-w-md bg-[#8a288f] text-white font-bold py-3 rounded-lg text-center text-lg transition active:scale-95"
                 disabled={!transactionId}
             >
                 পেমেন্ট কনফার্ম করুন
             </button>
+            </Link>
         </div>
     )
 }

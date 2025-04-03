@@ -5,6 +5,7 @@ import PaymentMethod from "../comporent/PaymentMethod";
 import Bkash from "../comporent/bnrPages/Bkash";
 import Nagad from "../comporent/bnrPages/Nagad";
 import Roket from "../comporent/bnrPages/Roket";
+import PaymentSuccess from "../comporent/PaymentSuccess";
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
     {
         path: "/payment-method/rocket",
         element: <Roket />,
-    }
+    },
+    {
+        path: "/payment-success",
+        element: <PaymentSuccess />,
+    },
 ]);
 
 export default router;

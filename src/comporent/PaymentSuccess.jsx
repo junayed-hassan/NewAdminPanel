@@ -1,62 +1,59 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
+import React from "react";
+import { Card, CardContent, Typography, Button } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-export default function PaymentSuccess() {
-  return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <Card className="w-full max-w-md bg-white shadow-lg rounded-2xl p-6">
-        <div className="flex flex-col items-center">
-          <div className="bg-green-100 p-4 rounded-full">
-            <CheckCircle className="text-green-500 w-12 h-12" />
-          </div>
-          <h2 className="text-xl font-semibold mt-4">Payment Success!</h2>
-          <p className="text-2xl font-bold text-blue-600 mt-2">1000৳</p>
+const PaymentSuccess = () => {
+    return (
+        <div className="flex justify-center items-center h-screen  min-h-screen bg-neutral-900 text-white p-4">
+            <Card className="w-96 shadow-lg rounded-xl bg-gray-900">
+                <CardContent className="p-6 text-center">
+                    <div className="flex justify-center mb-4">
+                        <CheckCircleIcon className="text-green-500" fontSize="large" />
+                    </div>
+                    <Typography variant="h6" className="font-semibold">
+                        পেমেন্ট সফল!
+                    </Typography>
+                    <Typography variant="h4" className="text-blue-600 font-bold mt-2">
+                        1000৳
+                    </Typography>
+                    <div className="text-left mt-4 text-gray-600">
+                        <Typography variant="body2">
+                            <strong>Ref Number:</strong> 003465342323
+                        </Typography>
+                        <Typography variant="body2">
+                            <strong>Date:</strong> Mar 22, 2024
+                        </Typography>
+                        <Typography variant="body2">
+                            <strong>Time:</strong> 07:28 PM
+                        </Typography>
+                        <Typography variant="body2">
+                            <strong>Payment Method:</strong> Bank Transfer
+                        </Typography>
+                        <Typography variant="body2">
+                            <strong>Sender Name:</strong> Aakash Khanal
+                        </Typography>
+                        <Typography variant="body2">
+                            <strong>Receiver Name:</strong> Subash Limbu
+                        </Typography>
+                        <Typography variant="body2" className="mt-2">
+                            <strong>Payment Status:</strong> <span className="text-green-600">Success</span>
+                        </Typography>
+                        <Typography variant="h6" className="font-bold mt-4">
+                            Total Amount: <span className="text-gray-900">Rs. 10,000</span>
+                        </Typography>
+                    </div>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        className="mt-4"
+                    >
+                        Back to Home
+                    </Button>
+                </CardContent>
+            </Card>
         </div>
+    );
+};
 
-        <CardContent className="mt-4">
-          <div className="text-sm space-y-2">
-            <div className="flex justify-between">
-              <span className="text-gray-500">Ref Number</span>
-              <span className="font-medium">003465342323</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-500">Date</span>
-              <span className="font-medium">Mar 22, 2024</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-500">Time</span>
-              <span className="font-medium">07:28 PM</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-500">Payment Method</span>
-              <span className="font-medium">Bank Transfer</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-500">Sender Name</span>
-              <span className="font-medium">Aakash Khanal</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-500">Receiver Name</span>
-              <span className="font-medium">Subash Limbu</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-500">Payment Status</span>
-              <span className="text-green-600 font-semibold">Success</span>
-            </div>
-            <div className="flex justify-between font-bold text-lg mt-2">
-              <span className="text-gray-500">Total Amount</span>
-              <span className="text-black">Rs. 10,000</span>
-            </div>
-          </div>
-        </CardContent>
-
-        <div className="mt-6">
-          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg">
-            Back to Home
-          </Button>
-        </div>
-      </Card>
-    </div>
-  );
-}
+export default PaymentSuccess;
