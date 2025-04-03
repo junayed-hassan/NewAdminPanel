@@ -9,19 +9,19 @@ function Pages2() {
     const [agree, setAgree] = useState(false);
     const [loading, setLoading] = useState(false);
     const [site, setSite] = useState("");
-    const [rate, setRate] = useState("00টা");
+    const [rate, setRate] = useState("00৳");
 
     const siteOptions = [
-        { name: "betx300.world", rate: "23টা" },
-        { name: "betx375.world", rate: "25টা" },
-        { name: "betx385.world", rate: "27টা" }
+        { name: "betx300.world", rate: "23৳" },
+        { name: "betx375.world", rate: "25৳" },
+        { name: "betx385.world", rate: "27৳" }
     ];
 
     const handleSiteChange = (e) => {
         const selectedSite = e.target.value;
         const matchedSite = siteOptions.find((s) => s.name === selectedSite);
         setSite(selectedSite);
-        setRate(matchedSite ? matchedSite.rate : "00টা");
+        setRate(matchedSite ? matchedSite.rate : "00৳");
     };
 
     const handleSubmit = () => {
@@ -202,7 +202,7 @@ function Pages2() {
 
                         {/* রেট আলাদা বক্সে দেখাবে */}
                         <div className="bg-gray-800 border border-gray-700 text-center rounded-lg h-12 text-white min-w-20 flex items-center justify-center">
-                            {rate ? <span className="text-sm font-[600]">{rate}</span> : <span className="text-white text-sm font-[600]">00টা</span>}
+                            {rate ? <span className="text-sm font-[600]">{rate}</span> : <span className="text-white text-sm font-[600]">00৳</span>}
                         </div>
                     </div>
                 </div>
