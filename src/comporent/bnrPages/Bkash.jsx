@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
@@ -13,12 +14,39 @@ function Pages4() {
             {/* Transaction ID Input Section */}
             <div className="w-full max-w-md bg-neutral-800 p-4 rounded-lg mt-4">
                 <p className="text-gray-300 mb-2">ট্রানজেকশন আইডি লিখুন</p>
-                <input
+                <TextField
                     type="text"
                     value={transactionId}
                     onChange={(e) => setTransactionId(e.target.value)}
-                    className="w-full p-3 bg-neutral-700 text-white rounded-lg outline-none"
-                    placeholder="..."
+                    variant="outlined"
+                    fullWidth
+                    required
+                    placeholder="...."
+                    sx={{
+                        backgroundColor: "#262626", // bg-gray-800
+                        borderRadius: "8px",
+                        height: "48px", // h-12 সেট করা হয়েছে
+                        "& .MuiOutlinedInput-root": {
+                            height: "48px", // ইনপুট বক্সের উচ্চতা ঠিক রাখা
+                            "& fieldset": {
+                                borderColor: "#374151", // Border color (gray-700)
+                            },
+                            "&:hover fieldset": {
+                                borderColor: "#0369a1", // Hover border color (purple-700)
+                            },
+                            "&.Mui-focused fieldset": {
+                                borderColor: "#0369a1", // Focus border color (purple-700)
+                            },
+                        },
+                        input: {
+                            color: "white", // ইনপুট টেক্সট সাদা হবে
+                            height: "48px", // ইনপুটের উচ্চতা ঠিক রাখা
+                            padding: "12px", // ভেতরের প্যাডিং ঠিক রাখা
+                        },
+                        "& .MuiInputBase-input::placeholder": {
+                            color: "#9CA3AF", // Placeholder text gray-500
+                        }
+                    }}
                 />
             </div>
 
