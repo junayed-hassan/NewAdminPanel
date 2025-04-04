@@ -4,7 +4,7 @@ import { TextField, MenuItem, Select, Checkbox, FormControlLabel, CircularProgre
 import { WhatsApp } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-function Pages2() {
+function Index() {
     const [language, setLanguage] = useState("বাংলা");
     const [agree, setAgree] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -263,4 +263,4 @@ function Pages2() {
     );
 }
 
-export default Pages2;
+export default Index;

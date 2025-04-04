@@ -2,7 +2,7 @@ import { TextField } from '@mui/material';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-function Pages4() {
+function Bkash() {
     const [transactionId, setTransactionId] = useState("");
     return (
         <div className="min-h-screen flex flex-col items-center bg-neutral-900 text-white p-4">
@@ -75,4 +75,4 @@ function Pages4() {
     )
 }
 
-export default Pages4
+export default Bkash
