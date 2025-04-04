@@ -10,6 +10,9 @@ const PaymentSuccess = () => {
             {/* Header */}
             <Card className="w-[350px] md:w-[400px] mb-2 mt-8 mx-auto p-4 shadow-md rounded-2xl !bg-neutral-800">
                 <CardContent className="text-center">
+                    <Typography variant="h5" className="mb-4 font-bold">
+                        <p className="font-bold text-gray-300">পেমেন্ট সফল!</p>
+                    </Typography>
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -20,11 +23,8 @@ const PaymentSuccess = () => {
                             <CheckCircleIcon className="text-sky-400 text-6xl" />
                         </strong>
                     </motion.div>
-                    <Typography variant="h6" className="mt-2 font-bold">
-                        <p className="font-bold text-gray-300">পেমেন্ট সফল!</p>
-                    </Typography>
                     <Typography variant="h5" className="text-blue-600 font-bold">
-                    <p className="font-bold">1000৳</p>
+                        <p className="font-bold">1000৳</p>
                     </Typography>
 
                     <div className="text-left border-t-2 pt-4 border-dashed  border-gray-200 mt-4 text-sm text-gray-300">
@@ -42,12 +42,12 @@ const PaymentSuccess = () => {
             </Card>
             <div className="flex flex-col mt-auto items-center">
                 <Link to="/" className="w-full max-w-md mt-auto mb-4">
-                <Button
-                    variant="contained"
-                    className=" w-[350px] md:w-[400px] inline-flex h-12 items-center border border-gray-500 justify-center rounded-md bg-sky-700 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 mb-4"
-                >
-                    হোমে ফিরে যান
-                </Button>
+                    <Button
+                        variant="contained"
+                        className=" w-[350px] md:w-[400px] inline-flex h-12 items-center border border-gray-500 justify-center rounded-md bg-sky-700 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95 mb-4"
+                    >
+                        হোমে ফিরে যান
+                    </Button>
                 </Link>
             </div>
         </div>
