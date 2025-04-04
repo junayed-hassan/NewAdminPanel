@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Pages3() {
+function PaymentMethod() {
     const [selectedPayment, setSelectedPayment] = useState(null);
 
     return (
@@ -56,4 +56,4 @@ function Pages3() {
     );
 }
 
-export default Pages3;
+export default PaymentMethod;
